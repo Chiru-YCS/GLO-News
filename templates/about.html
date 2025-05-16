@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/style.css">
+        <style>
+            body {
+                background-color: #e0f7f1;
+                /* Light background for contrast */
+            }
+
+            .about-card {
+                background-color: #ffffff;
+                /* White background for the card */
+                border-radius: 10px;
+                /* Rounded corners */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                /* Subtle shadow */
+                padding: 20px;
+                /* Padding inside the card */
+                margin-top: 20px;
+                /* Space above the card */
+            }
+
+            .about-title {
+                color: #0056b3;
+                /* Dark blue color for the title */
+                font-weight: bold;
+                /* Bold title */
+                text-transform: uppercase;
+                /* Uppercase letters */
+                letter-spacing: 1px;
+                /* Spacing between letters */
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <header class="my-4">
+                <h1 class="text-center about-title">About This Application</h1>
+                <nav class="text-center">
+                    <a href="/" class="btn btn-secondary mx-2">Home</a>
+                    <a href="/about" class="btn btn-secondary mx-2">About</a>
+                    <a href="/creator" class="btn btn-secondary mx-2">About the Creator</a>
+                </nav>
+            </header>
+            <main class="text-center">
+                <div class="text-center">
+                    <img src="/static/globe1.jpeg" alt="Globe Image" class="img-fluid" style="max-width: 100%; height: auto;">
+                </div>
+                <div class="about-card">
+                    <p class="mt-4">GLO-NEWS is dedicated to bringing you the latest news articles from around the world. Our mission is to provide accurate and timely information to our readers.</p>
+                    <p>This website provides the latest news articles from around the world, powered by the News API.Users can search for articles based on specific queries, allowing them to stay updated on topics of interest.</p>
+                    <p>The application is built using Flask, a lightweight web framework for Python, and utilizes Bootstrap for responsive design.</p>
+                    <p>Feel free to explore the latest news and stay informed!</p>
+                </div>
+            </main>
+            <footer class="text-center my-4">
+                <p>&copy; GLO-NEWS 2025</p>
+            </footer>
+        </div>
+    </body>
+
+</html>

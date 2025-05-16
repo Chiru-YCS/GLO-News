@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GLO-NEWS</title>
+        <meta name="description" content="Stay updated with the latest news articles from around the world.">
+        <meta name="keywords" content="news, articles, latest news, GLO-NEWS">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <header class="my-4 text-center">
+                <div class="title-box">
+                    <img src="/static/globe.jpeg" alt="Globe holding newspaper" class="title-image">
+                    <h1 class="title">GLO-NEWS</h1>
+                </div>
+                <nav class="text-center">
+                    <a href="/" class="btn btn-secondary mx-2">Home</a>
+                    <a href="/about" class="btn btn-secondary mx-2">About</a>
+                    <a href="/creator" class="btn btn-secondary mx-2">About the Creator</a>
+                </nav>
+            </header>
+            <main>
+                <form method="GET" action="/">
+                    <div class="form-group">
+                        <label for="query">Please enter your preferred news topic:</label>
+                        <input type="text" autocomplete="off" id="query" name="query" class="form-control" placeholder="e.g., India" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+
+                {% if articles %}
+                    <div class="row mt-4">
+                        {% for article in articles %}
+                            <div class="col-md-4 my-3">
+                                <div class="card">
+                                    {% if article['urlToImage'] %}
+                                        <img src="{{ article['urlToImage'] }}" class="card-img-top" alt="{{ article['title'] }}">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ article['title'] }}</h5>
+                                        <p class="card-text">{{ article['description'] }}</p>
+                                        <a href="{{ article['url'] }}" class="btn btn-outline-primary" target="_blank">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="text-center">
+                        <a href="?query={{ query }}&page={{ page + 1 }}" class="btn btn-primary">Load More Articles</a>
+                    </div>
+                {% else %}
+                    <div class="alert alert-warning text-center" role="alert">
+                        <strong>No articles available!</strong> Please check back later.
+                    </div>
+                {% endif %}
+            </main>
+            <footer class="text-center my-4">
+                <p>&copy; 2025 News Articles</p>
+            </footer>
+        </div>
+    </body>
+
+</html>
